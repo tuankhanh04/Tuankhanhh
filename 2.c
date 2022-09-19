@@ -1,63 +1,89 @@
 #include <stdio.h>
 
-
-int main(){
-	int tong1(int num1,int num2);
-    int hieu1(int num1 ,int num2);
-    float thuong1(int num1,int num2);
-    int tich1(int num1,int num2); 
-    char nhap;
-    int g,m;
- do{
- 	printf("nhap g: \n");
- 	scanf("%d",&g);
-	printf("nhap m: \n");
-	scanf("%d",&m);
-	printf("nhap phep tinh \n");
-	fflush(stdin);    // xoa di bo tam thoi cua chuong trinh tam thoi
-	scanf("%c",&nhap);
-	switch(nhap){
-		case '+':{
-			printf("Tong = %d\n\n",tong1(g,m));
-			break;
+int tong(int num1,int num2,int num3);
+int xettuyen(int tong);
+int main() 
+{ 
+	int a,b,c;
+	int kq;
+	char ans;
+	do{
+	printf("Nhap diem thu 1: \n");
+	scanf("%d",&a);
+	printf("Nhap diem thu 2: \n");
+	scanf("%d",&b);
+	printf("Nhap diem thu 3: \n");
+	scanf("%d",&c);
+    kq = tong(a,b,c);
+	printf("Tong diem 3 mon %d \n",kq);
+	printf("\n",xettuyen(kq));
+	fflush(stdin);
+	printf(" Chon Y va y de tiep duoc :\n");
+	scanf("%c",&ans);
+	}
+	while (ans=='y'|| ans=='Y');
+	
+	return 0;}
+   int tong(int num1,int num2,int num3)
+   {
+   	int tong;
+   	tong = num1 + num2 + num3;
+   	return tong;
+   }
+   int xettuyen(int tong)
+   {
+   	if (tong < 22){
+	   printf("\n TRUOT ");
+   	return 0;}	
+    else{
+	if (tong >= 28){
+		printf("Do Dai Hoc Bach Khoa\nDo Dai Hoc Cong Nghe\nDo FPT University\n");}
+		else if (tong >= 25){
+		printf(" Do Dai Hoc Cong Nghe\n Do FPT University\n");}
+    	else if (tong >= 22){
+		printf("Do Dai Hoc Cong Nghe\n");}
+		else {
 		}
-		case '-':{
-		printf("Hieu = %d\n\n",hieu1(g,m));
-			break;
-		}
-		case'/':{
-			printf("Thuong = %f\n\n",thuong1(g,m));
-			break;
-		}		case'*':{
-
-			printf("Tich = %d\n\n",tich1(g,m));
-			break;
-		}
-	}		
-	}while(nhap == 1);
+		return 1;
 }
-		int tong1(int num1,int num2){
-    	int a;
-    	a = num1+num2;
-    	return a;	
-	}
-	int hieu1(int num1,int num2){
-    	int b;
-    	b = num1-num2;
-    	return b;
-	}
-  float thuong1(int num1,int num2){
-    	float c;
-    	c =(float)num1/num2;
-		return c;	
-	}
-	int tich1(int num1,int num2){
-		int d;
-		d = num1*num2;
-		return d;
-	}	
-
-	
-	
-	
-
+}
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
